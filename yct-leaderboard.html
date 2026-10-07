@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard</title>
+  <style>
+    html {
+      margin: 0;
+
+      padding: 0;
+
+      color: #F0EBDB;
+      background: #1F2A44;
+      font-family: "Farlot Semibold";
+      font-size: 2vw;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      box-sizing: border-box;
+
+      padding: 0 0 2rem;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+
+    h1 {
+      flex: 0 0 auto;
+      text-align: center;
+      font-size: 3.5rem;
+    }
+
+    main {
+      flex: 1 1 auto;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+
+    iframe {
+      flex: 1 1 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Leaderboard</h1>
+  <main>
+    <iframe src="" frameborder="0"></iframe>
+  </main>
+  <script type="text/javascript">
+    const leaderboards = [
+      'kvhjvgfnqcknr',
+      'lflmlyjxttpnr',
+      'pkmrhwxpsydhr',
+    ];
+    document.querySelector('main').innerHTML = leaderboards
+      .map(id => `<iframe src="https://leaderboarded.com/board/${id}/?public=true&preview=true&styled" frameborder="0"></iframe>`)
+      .join('\n');
+  </script>
+</body>
+</html>
