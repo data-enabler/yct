@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name YCT Leaderboarded 
 @namespace chemcreative.com
-@version 0.0.1
+@version 0.0.2
 ==/UserStyle== */
 
 @-moz-document regexp("https:\\/\\/leaderboarded\\.com\\/board\\/\\w+\\/\\?public=true&preview=true&styled") {
@@ -59,6 +59,7 @@ html {
 
 .ms-header,
 .ms-rank-cell,
+.ms-image-cell,
 .ms-score-cell + .ms-score-cell {
   display: none !important;
 }
