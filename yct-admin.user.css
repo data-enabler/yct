@@ -1,0 +1,50 @@
+/* ==UserStyle==
+@name YCT Leaderboarded Simplified Admin
+@namespace chemcreative.com
+@version 0.0.1
+==/UserStyle== */
+
+@-moz-document regexp("https:\\/\\/leaderboarded\\.com\\/board\\/\\w+\\?ipad") {
+#announcement {
+  display: none !important;
+}
+
+#floating-feedback-group {
+  display: none !important;
+}
+
+.navbar {
+  display: none !important;
+}
+
+.card-header {
+  display: none !important;
+}
+
+.app-footer {
+  display: none !important;
+}
+
+#add_column_btn,
+#openAppearanceButton,
+#openSettingsButton {
+  display: none !important;
+}
+
+#controlPanel .vr {
+  display: none !important;
+}
+
+#add_player_btn {
+  width: 100%;
+}
+
+.leaderboard-header.is-editable {
+  pointer-events: none;
+}
+
+.leaderboard-add-logo-cta {
+  display: none !important;
+}
+
+}
