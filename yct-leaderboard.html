@@ -13,7 +13,7 @@
       color: #EBE6D9;
       background: #202A44;
       font-family: "Farlot Semibold";
-      font-size: 2vw;
+      font-size: 3vw;
     }
 
     body {
@@ -21,25 +21,30 @@
       height: 100vh;
       box-sizing: border-box;
 
-      padding: 0 0 2rem;
+      padding: 0 0 1rem;
       display: flex;
       flex-flow: column nowrap;
     }
 
     h1 {
+      margin: 0.4em 0;
       flex: 0 0 auto;
       text-align: center;
       font-size: 3.5rem;
     }
 
     main {
+      position: relative;
       flex: 1 1 auto;
-      display: flex;
-      flex-flow: column nowrap;
     }
 
     iframe {
-      flex: 1 1 auto;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
     }
   </style>
 </head>
@@ -50,13 +55,58 @@
   </main>
   <script type="text/javascript">
     const leaderboards = [
-      'kvhjvgfnqcknr',
-      'lflmlyjxttpnr',
-      'pkmrhwxpsydhr',
+      'pkmrhwxpsydhr', // RC
+      'lflmlyjxttpnr', // FT
+      'kvhjvgfnqcknr', // PP
     ];
     document.querySelector('main').innerHTML = leaderboards
       .map(id => `<iframe src="https://leaderboarded.com/board/${id}/?public=true&preview=true&styled" frameborder="0"></iframe>`)
       .join('\n');
+
+    const numBoards = leaderboards.length;
+    const animDuration = 20;
+    const totalDuration = animDuration * numBoards;
+    const fadeDuration = 1.5;
+    const style = `
+iframe {
+  animation-name: fade;
+  animation-duration: ${totalDuration}s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+${leaderboards.map((_, i) => `
+iframe:nth-of-type(${i + 1}) {
+  animation-delay: ${i * animDuration}s;
+}
+`).join('\n')}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  ${100 * fadeDuration/totalDuration}% {
+    opacity: 1;
+  }
+
+  ${100 * (animDuration - fadeDuration)/totalDuration}% {
+    opacity: 1;
+  }
+
+  ${100 * animDuration/totalDuration}% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+`;
+    const styleElem = document.createElement('style');
+    styleElem.textContent = style;
+    document.head.append(styleElem);
   </script>
 </body>
 </html>
