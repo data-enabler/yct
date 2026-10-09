@@ -13,6 +13,8 @@
 html, body {
   overflow: hidden !important;
   background: transparent !important;
+  cursor: none;
+  -webkit-user-select: none;
 }
 
 html {
