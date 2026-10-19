@@ -1,10 +1,11 @@
 /* ==UserStyle==
-@name YCT Leaderboarded Simplified Admin
+@name Leaderboard Simplified Admin
 @namespace chemcreative.com
-@version 0.0.1
+@version 0.0.2
 ==/UserStyle== */
 
 @-moz-document regexp("https:\\/\\/leaderboarded\\.com\\/board\\/\\w+\\?ipad") {
+
 #announcement {
   display: none !important;
 }

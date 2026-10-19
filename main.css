@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Farlot Semibold';
+  src: url(./Farlot-Semibold.otf);
+}
+
+html {
+  margin: 0;
+
+  padding: 0;
+
+  color: #EBE6D9;
+  background: #202A44;
+  font-family: "Farlot Semibold", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+h1 {
+  margin: 0.4em 0;
+  flex: 0 0 auto;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+main {
+  position: relative;
+  flex: 1 1 auto;
+}
