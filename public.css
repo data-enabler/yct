@@ -1,18 +1,26 @@
-main {
-  display: flex;
-  flex-flow: row nowrap;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0 10%;
-}
-
 h1 {
   font-size: 3.2rem;
 }
 
-.leaderboard {
+main {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+blossom-carousel {
+  scroll-snap-type: x mandatory;
+  flex: 1 1 auto;
+  padding: 0 50%;
+}
+
+blossom-dots {
+  --blossom-dot-size: 0.8rem;
   flex: 0 0 auto;
-  width: 100%;
+  padding: 1.2rem;
+}
+
+.leaderboard {
+  width: 20rem;
   height: 100%;
   box-sizing: border-box;
   scroll-snap-align: center;

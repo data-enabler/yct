@@ -9,6 +9,10 @@ body {
   -webkit-user-select: none;
 }
 
+main {
+  position: relative;
+}
+
 .leaderboard {
   position: absolute;
   inset: 0;
