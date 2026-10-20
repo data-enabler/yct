@@ -1,5 +1,3 @@
-import { leaderboards } from './leaderboards.js';
-
 const qrCode = new QRCode({
   content: 'https://data-enabler.github.io/yct/index.html',
   container: 'svg-viewbox',
@@ -9,7 +7,8 @@ const qrCode = new QRCode({
 
 document.querySelector('.svg-container').innerHTML = qrCode;
 
-document.querySelector('main').innerHTML = leaderboards
+document.querySelector('main')
+  .innerHTML = window.leaderboards
   .map(({url, svg}) => `
 <div class="leaderboard">
   <iframe src="${url}&styled" frameborder="0"></iframe>
@@ -17,7 +16,7 @@ document.querySelector('main').innerHTML = leaderboards
   `)
   .join('\n');
 
-const numBoards = leaderboards.length;
+const numBoards = window.leaderboards.length;
 const animDuration = 20;
 const totalDuration = animDuration * numBoards;
 const fadeDuration = 1.5;
@@ -30,7 +29,7 @@ const style = `
   animation-iteration-count: infinite;
 }
 
-${leaderboards.map((_, i) => `
+${window.leaderboards.map((_, i) => `
 .leaderboard:nth-child(${i + 1}) {
   animation-delay: ${i * animDuration}s;
 }

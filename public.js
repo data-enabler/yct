@@ -1,6 +1,5 @@
-import { leaderboards } from './leaderboards.js';
-
-document.querySelector('blossom-carousel').innerHTML = leaderboards
+document.querySelector('blossom-carousel')
+.innerHTML = window.leaderboards
   .map(({url}) => `
 <div class="leaderboard" data-blossom-slide>
   <iframe src="${url}" frameborder="0"></iframe>

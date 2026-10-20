@@ -1,4 +1,4 @@
-export const leaderboards = [
+window.leaderboards = [
   'pkmrhwxpsydhr', // RC
   'bhzbvbyrfymtr', // 3CP
   'lflmlyjxttpnr', // FT
